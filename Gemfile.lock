@@ -2,13 +2,19 @@ GEM
   remote: https://rubygems.org/
   specs:
     curb (0.8.6)
+    daemon_controller (1.2.0)
     ethon (0.7.1)
       ffi (>= 1.3.0)
     ffi (1.9.6)
     newrelic_rpm (3.9.7.266)
+    passenger (4.0.53)
+      daemon_controller (>= 1.2.0)
+      rack
+      rake (>= 0.8.1)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
+    rake (10.1.0)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -23,5 +29,6 @@ PLATFORMS
 DEPENDENCIES
   curb
   newrelic_rpm
+  passenger
   sinatra
   typhoeus
