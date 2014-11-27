@@ -1,7 +1,7 @@
 ---
 applications:
-  - name: test-app-server-webrick
-    command: ruby main.rb
+  - name: test-app-server-passenger
+    command: bundle exec passenger start -p $PORT
     buildpack: ruby_buildpack
     env:
       RACK_ENV: production
