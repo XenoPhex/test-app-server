@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'newrelic_rpm'
 
 get '/' do
     "Welcome to the test app!"

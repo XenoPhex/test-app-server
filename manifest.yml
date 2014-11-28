@@ -3,3 +3,5 @@ applications:
   - name: test-app-server-webrick
     command: ruby main.rb
     buildpack: ruby_buildpack
+    env:
+      RACK_ENV: production
