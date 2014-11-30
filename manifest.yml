@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: test-app-server-passenger
+  - name: test-app-server-passenger-beta
     command: bundle exec passenger start -p $PORT
     buildpack: ruby_buildpack
     env:

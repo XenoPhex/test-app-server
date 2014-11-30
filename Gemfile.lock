@@ -7,14 +7,14 @@ GEM
     ffi (1.9.6)
     daemon_controller (1.2.0)
     newrelic_rpm (3.9.7.266)
-    passenger (4.0.53)
+    passenger (5.0.0.beta1)
       daemon_controller (>= 1.2.0)
       rack
       rake (>= 0.8.1)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
-    rake (10.1.0)
+    rake (10.4.0)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -29,6 +29,6 @@ PLATFORMS
 DEPENDENCIES
   curb
   newrelic_rpm
-  passenger
+  passenger (= 5.0.0.beta1)
   sinatra
   typhoeus
