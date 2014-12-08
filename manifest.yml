@@ -1,7 +1,7 @@
 ---
 applications:
   - name: test-app-server-thin
-    command: bundle exec thin start -p $PORT
+    command: bundle exec thin start -p $PORT --threaded
     buildpack: ruby_buildpack
     env:
       RACK_ENV: production
