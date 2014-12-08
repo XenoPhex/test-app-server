@@ -2,6 +2,7 @@ require 'sinatra'
 require 'newrelic_rpm'
 require 'curl'
 require 'json'
+require 'typhoeus'
 
 SLEEPER_API_URL = "http://sleeper-api.cfapps.io"
 
@@ -38,6 +39,25 @@ get '/simulate_stats' do
   Curl.get("#{SLEEPER_API_URL}/3")   #spaces
   Curl.get("#{SLEEPER_API_URL}/2")   #organizations
   Curl.get("#{SLEEPER_API_URL}/2")   #quota_definitions
+
+  headers 'Content-Type' => 'text/json'
+  { stats_simulation: 'sucessful' }.to_json
+end
+
+get '/simulate_stats_typhoeus' do
+  # Based on Week's average on 11/14/2014 @ 11AM PST
+  Typhoeus.get("#{SLEEPER_API_URL}/105") #domains
+  Typhoeus.get("#{SLEEPER_API_URL}/103") #instances
+  Typhoeus.get("#{SLEEPER_API_URL}/103") #stats
+  Typhoeus.get("#{SLEEPER_API_URL}/88")  #summary
+  Typhoeus.get("#{SLEEPER_API_URL}/64")  #app
+  Typhoeus.get("#{SLEEPER_API_URL}/57")  #env
+  Typhoeus.get("#{SLEEPER_API_URL}/56")  #routes
+  Typhoeus.get("#{SLEEPER_API_URL}/40")  #uaa
+  Typhoeus.get("#{SLEEPER_API_URL}/34")  #stacks
+  Typhoeus.get("#{SLEEPER_API_URL}/3")   #spaces
+  Typhoeus.get("#{SLEEPER_API_URL}/2")   #organizations
+  Typhoeus.get("#{SLEEPER_API_URL}/2")   #quota_definitions
 
   headers 'Content-Type' => 'text/json'
   { stats_simulation: 'sucessful' }.to_json
